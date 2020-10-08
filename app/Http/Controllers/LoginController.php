@@ -36,7 +36,7 @@ class LoginController extends Controller
 
     	}else{
 
-    		return redirect('login')->with('failed_message','Try again later');
+    		return redirect('/')->with('failed_message','Please check user  id or password');
     	}
 
 

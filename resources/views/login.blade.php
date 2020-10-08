@@ -2,10 +2,16 @@
 @extends('layouts.default')
 @section('content')
 
-<div class="col-sm-12 d-flex justify-content-center">
-<form method="post" action="{{ url('login-post')}}">
+<div class="col-sm-6 justify-content-center">
+  @if(session()->has('failed_message'))
+   <span class="alert alert-danger">{{ session()->get('failed_message')}}</span>
+  @endif
+
+<form method="post" action="{{ url('login-post')}}" class="mt-3">
+
 	@csrf
   <div class="form-group">
+     
     <label for="exampleInputEmail1">Email address</label>
     <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
